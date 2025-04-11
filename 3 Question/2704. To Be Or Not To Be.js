@@ -1,13 +1,18 @@
-var createCounter = function(n) {
-    
-    return function() {
-      
-          return n++
-      
-    };
+
+var expect = function(val) {
+    let Obj={
+        toBe(valTo){
+            if(val===valTo) return true;
+            else throw new Error("Not Equal");
+        },
+        notToBe(valNot){
+            if(val!==valNot) return true;
+            else throw new Error("Equal");
+        }
+    }
+
+    return Obj;
 };
 
-const counter = createCounter(10)
-counter() // 10
-counter() // 11
-counter() // 12
+
+ 
